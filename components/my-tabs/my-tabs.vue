@@ -1,7 +1,7 @@
 <template>
 	<view class="my-tabs-container">
 		<view class="tabs-box">
-			<scroll-view class="scroll-view" scroll-x="true"  scroll-with-animation>
+			<scroll-view class="scroll-view" scroll-x="true"  scroll-with-animation :scroll-left="scrollLeft">
 				<view class="tabs-item">
 					<block v-for="(item,index) in tabData" :key="item.id">
 						<view :id="'_tab_'+index" class="item" @click="handleClickTabs(index)" :class="{activeTab:activeIndex===index }">{{item.label}}</view>
@@ -50,7 +50,8 @@
 					underlineDefaultWidth:24,
 					underlineDefaultHeight:2,
 					underlineDefaultColor:'#fa942a'
-				}
+				},
+				scrollLeft:0, //scrollview滚动距离
 			};
 		},
 		methods:{
@@ -87,6 +88,8 @@
 				this.slider = {
 					left:this.tabList[index].slider.left
 				}
+				// scrollview滚动
+				this.scrollLeft = this.activeIndex * this.defaultConfig.underlineDefaultWidth
 			}
 		},
 		watch:{
@@ -140,7 +143,8 @@
 				background-color: #fa942a;
 				border-radius: 3px;
 				position: absolute;
-				bottom: 20px;
+				// bottom: 20px;
+				top: 43px;
 				transition: .5s;
 			}
 		}
