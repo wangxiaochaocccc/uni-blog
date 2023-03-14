@@ -7,7 +7,12 @@
 						<view :id="'_tab_'+index" class="item" @click="handleClickTabs(index)" :class="{activeTab:activeIndex===index }">{{item.label}}</view>
 					</block>
 				</view>
-				<view class="underline" :style="'transform:translateX('+slider.left+'px)'"></view>
+				<view class="underline" :style="{
+              transform: 'translateX(' + slider.left + 'px)',
+              width: defaultConfig.underlineDefaultWidth + 'px',
+              height: defaultConfig.underlineDefaultHeight + 'px',
+              backgroundColor: defaultConfig.underlineDefaultColor
+            }"></view>
 			</scroll-view>
 		</view>
 	</view>
@@ -40,7 +45,12 @@
 				slider: {
 					left:0
 				},
-				tabList:[] //本地维护一个tabs数据对象
+				tabList:[], //本地维护一个tabs数据对象
+				defaultConfig: {
+					underlineDefaultWidth:24,
+					underlineDefaultHeight:2,
+					underlineDefaultColor:'#fa942a'
+				}
 			};
 		},
 		methods:{
