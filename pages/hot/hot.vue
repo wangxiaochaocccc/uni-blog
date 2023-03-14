@@ -4,6 +4,7 @@
 		<view class="search-box">
 			<my-search></my-search>
 		</view>
+		<my-tabs :tabData="tabsData"></my-tabs>
 	</view>
 </template>
 
@@ -12,7 +13,7 @@
 	export default {
 		data() {
 			return {
-				
+				tabsData:[]
 			};
 		},
 		created(){
@@ -21,8 +22,8 @@
 		methods:{
 			// 获取tabs数据
 			async loadTabsData(){
-				const res=await getTabsData()
-				console.log(res)
+				const { data }=await getTabsData()
+				this.tabsData = data.list
 			}
 		}
 	}

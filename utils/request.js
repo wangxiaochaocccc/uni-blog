@@ -11,7 +11,7 @@ function request({url,data,method}){
 			},
 			success({data}) {
 				if(data.success){
-					resolve(data.data)
+					resolve(data)
 				}else {
 					uni.showToast({
 						title:data.message,
