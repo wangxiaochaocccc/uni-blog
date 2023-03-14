@@ -3,7 +3,7 @@
 		<view class="container">
 			<image class="icon" src="@/static/images/search.png" mode=""></image>
 			<text class="placeholder">{{placeholderText}}</text>
-		</div>
+		</view>
 	</view>
 </template>
 

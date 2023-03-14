@@ -8,11 +8,22 @@
 </template>
 
 <script>
+	import {getTabsData} from '@/api/hot.js'
 	export default {
 		data() {
 			return {
 				
 			};
+		},
+		created(){
+			this.loadTabsData()
+		},
+		methods:{
+			// 获取tabs数据
+			async loadTabsData(){
+				const res=await getTabsData()
+				console.log(res)
+			}
 		}
 	}
 </script>
