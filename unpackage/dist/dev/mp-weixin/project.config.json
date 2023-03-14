@@ -9,11 +9,12 @@
     "postcss": false,
     "minified": false,
     "newFeature": true,
-    "bigPackageSizeSupport": true
+    "bigPackageSizeSupport": true,
+    "checkSiteMap": false
   },
   "compileType": "miniprogram",
   "libVersion": "",
-  "appid": "touristappid",
+  "appid": "wxa62a0f044526e596",
   "projectname": "uni-blog",
   "condition": {
     "search": {

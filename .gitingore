@@ -1,1 +1,5 @@
-/unpackage
+unpackage/
+node_modules/
+.idea/
+.vscode/
+.hbuilderx/
