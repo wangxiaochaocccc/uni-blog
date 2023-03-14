@@ -4,7 +4,9 @@
 			<scroll-view class="scroll-view" scroll-x="true"  scroll-with-animation :scroll-left="scrollLeft">
 				<view class="tabs-item">
 					<block v-for="(item,index) in tabData" :key="item.id">
-						<view :id="'_tab_'+index" class="item" @click="handleClickTabs(index)" :class="{activeTab:activeIndex===index }">{{item.label}}</view>
+						<view :id="'_tab_'+index" class="item" @click="handleClickTabs(index)" :class="{activeTab:activeIndex===index }"
+						:style="{color: activeIndex===index ? defaultConfig.textActivedColor:defaultConfig.textColor}"
+						>{{item.label}}</view>
 					</block>
 				</view>
 				<view class="underline" :style="{
@@ -47,6 +49,8 @@
 				},
 				tabList:[], //本地维护一个tabs数据对象
 				defaultConfig: {
+					textColor:'#333',
+					textActivedColor:'#fa942a',
 					underlineDefaultWidth:24,
 					underlineDefaultHeight:2,
 					underlineDefaultColor:'#fa942a'
@@ -105,6 +109,12 @@
 					setTimeout(()=>{
 						this.updateTabsUnderline()
 					},0)
+				},
+				immediate:true
+			},
+			config: {
+				handler(val){
+					this.defaultConfig = {...this.defaultConfig,...val}
 				},
 				immediate:true
 			}
