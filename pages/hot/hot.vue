@@ -1,6 +1,6 @@
 <template>
-	<view>
-		
+	<view class="hot-container">
+		<image class="logo" src="@/static/images/logo.png" mode="aspectFit"></image>
 	</view>
 </template>
 
@@ -14,6 +14,12 @@
 	}
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+.hot-container {
+	background-color: #fff;
+	.logo {
+		width: 100%;
+		height: 80px;
+	}
+}
 </style>
