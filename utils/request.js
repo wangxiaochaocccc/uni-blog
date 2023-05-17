@@ -7,7 +7,7 @@ function request({url,data,method}){
 			data,
 			method,
 			header:{
-				icode:'EA0877CBED1800D2'
+				icode:'4B45B228E61749BE'
 			},
 			success({data}) {
 				if(data.success){

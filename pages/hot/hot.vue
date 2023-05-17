@@ -5,6 +5,8 @@
 			<my-search></my-search>
 		</view>
 		<my-tabs :tabData="tabsData"></my-tabs>
+		<!-- 列表 -->
+		<hot-list-item v-for="(item,index) in 10" :key="index"></hot-list-item>
 	</view>
 </template>
 
